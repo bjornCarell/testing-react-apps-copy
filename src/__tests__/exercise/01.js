@@ -20,32 +20,32 @@ beforeEach(() => {
   document.body.innerHTML = ''
 })
 
-test('failing test', () => {
-  const div = document.createElement('div')
-  document.body.append(div)
+// test('failing test', () => {
+//   const div = document.createElement('div')
+//   document.body.append(div)
 
-  ReactDOM.render(<Counter />, div)
-  
-  const message = div.firstElementChild.querySelector('div')
-  expect(message.textContent).toBe('Current count: 1')
-})
+//   ReactDOM.render(<Counter />, div)
+
+//   const message = div.firstElementChild.querySelector('div')
+//   expect(message.textContent).toBe('Current count: 1')
+// })
 
 test('counter increments and decrements when the buttons are clicked', () => {
   const div = document.createElement('div')
   document.body.append(div)
 
   ReactDOM.render(<Counter />, div)
-  
+
   const message = div.firstElementChild.querySelector('div')
   expect(message.textContent).toBe('Current count: 0')
 
   const clickEvent = new MouseEvent('click', {
     bubbles: true,
     cancelable: true,
-    button: 0
+    button: 0,
   })
   const [decrement, increment] = div.querySelectorAll('button')
-  
+
   increment.dispatchEvent(clickEvent)
   expect(message.textContent).toBe('Current count: 1')
 

@@ -3,7 +3,7 @@
 
 import * as React from 'react'
 // 🐨 import the `render` and `fireEvent` utilities from '@testing-library/react'
-import {render, fireEvent } from '@testing-library/react'
+import {render, fireEvent} from '@testing-library/react'
 import Counter from '../../components/counter'
 
 // 💣 remove this. React Testing Library does this automatically!
@@ -12,14 +12,13 @@ import Counter from '../../components/counter'
 // })
 
 test('counter increments and decrements when the buttons are clicked', () => {
-
   // 🐨 swap ReactDOM.render with React Testing Library's render
   // Note that React Testing Library's render doesn't need you to pass a `div`
   // so you only need to pass one argument. render returns an object with a
   // bunch of utilities on it. For now, let's just grab `container` which is
   // the div that React Testing Library creates for us.
   // 💰 const {container} = render(<Counter />)
-  const {container} = render(<Counter/>)
+  const {container} = render(<Counter />)
 
   // 🐨 instead of `div` here you'll want to use the `container` you get back
   // from React Testing Library
