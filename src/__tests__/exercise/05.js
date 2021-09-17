@@ -2,12 +2,9 @@
 // http://localhost:3000/login-submission
 
 import * as React from 'react'
-// 🐨 you'll need to grab waitForElementToBeRemoved from '@testing-library/react'
 import {render, screen, waitForElementToBeRemoved} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import {build, fake} from '@jackfranklin/test-data-bot'
-// 🐨 you'll need to import rest from 'msw' and setupServer from msw/node
-import {rest} from 'msw'
 import {setupServer} from 'msw/node'
 import { handlers } from 'test/server-handlers'
 import Login from '../../components/login-submission'
@@ -19,7 +16,7 @@ const buildLoginForm = build({
   },
 })
 
-const server = setupServer(handlers[0])
+const server = setupServer(...handlers)
 
 beforeEach(() => server.listen())
 afterAll(() => server.close())
